@@ -22,5 +22,5 @@ header {
 }
 .table {
   display: grid;
-  grid-column: 80px 80px;
+  grid-template-columns: 80px 80px;
 }
