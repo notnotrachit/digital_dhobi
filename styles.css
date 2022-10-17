@@ -22,6 +22,10 @@ header {
   border-bottom: 1px solid black;
   padding-bottom: 5px;
 }
+.icon {
+  width: 20px;
+  height: 20px;
+}
 .container {
   margin-top: 40px;
   width: 100%;
@@ -34,6 +38,12 @@ header {
   gap: 20px;
   align-items: center;
   justify-content: center;
+}
+.input {
+  border: 1px black solid;
+}
+.table-head {
+  display: flex;
 }
 footer {
   width: 100%;
