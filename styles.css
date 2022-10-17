@@ -1,0 +1,26 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+header {
+  text-align: center;
+  display: flex;
+  max-width: 300px;
+  flex-direction: row;
+  position: fixed;
+  top: 0%;
+  gap: 10px;
+}
+.container {
+  margin-top: 40px;
+}
+.table {
+  display: grid;
+  grid-column: 80px 80px;
+}
