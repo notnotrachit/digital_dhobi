@@ -12,10 +12,8 @@ body {
 }
 header {
   width: 100%;
-  position: fixed;
   top: 0%;
   gap: 10px;
-  margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,11 +21,10 @@ header {
   padding-bottom: 5px;
 }
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
 }
 .container {
-  margin-top: 40px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -38,16 +35,17 @@ header {
   gap: 20px;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
-.input {
+input {
   border: 1px black solid;
-}
-.table-head {
-  display: flex;
+  width: 40px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 10px;
 }
 footer {
   width: 100%;
-  position: fixed;
   bottom: 0%;
   margin-bottom: 30px;
   padding-top: 10px;
