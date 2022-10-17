@@ -23,4 +23,5 @@ header {
 .table {
   display: grid;
   grid-template-columns: 80px 80px;
+  gap: 20px;
 }
