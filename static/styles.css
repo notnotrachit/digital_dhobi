@@ -60,3 +60,12 @@ footer {
   padding-top: 10px;
   border-top: solid 1px black;
 }
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 900;
+  background-color: rgb(56, 222, 14);
+  border: 1px solid rgb(56, 222, 14);
+  color: #112a46;
+}
