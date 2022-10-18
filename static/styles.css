@@ -1,14 +1,14 @@
 * {
   margin: 0%;
   padding: 0%;
+  background-color: #acc8e5;
+  color: #112a46;
 }
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #acc8e5;
-  color: #112a46;
 }
 header {
   margin-top: 10px;
@@ -31,6 +31,7 @@ header {
   width: 100%;
   align-items: center;
   justify-content: center;
+  border-top: 1px solid black;
 }
 .table {
   margin-top: 1000px;
@@ -46,7 +47,7 @@ input {
   border: 1px black solid;
   width: 40px;
   height: 30px;
-  padding: 2px;
+  padding: 4px;
   border-radius: 10px;
   margin-left: 15px;
 }
