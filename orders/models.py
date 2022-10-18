@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class orders(models.Model):
     id = models.IntegerField(primary_key=True, unique=True)
+    date = models.DateField(auto_now_add=True, blank=True)
     name = models.CharField(max_length=100)
     enroll_no = models.CharField(max_length=100)
     room= models.CharField(max_length=100)
