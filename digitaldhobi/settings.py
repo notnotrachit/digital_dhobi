@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-^a7z7-4$67_t)3zd*34l@006xyn^d1#18v%3w(7y2+!f%moig!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*',]
 
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'digitaldhobi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -134,3 +134,19 @@ STATICFILES_DIRS = [
 ]
 WHITENOISE_ROOT = "static"
 STATIC_URL = 'static/'
+
+
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'Asia/Kolkata'
+
+USE_I18N = True
+
+USE_TZ = True
+
+CSRF_COOKIE_DOMAIN = None
+CSRF_TRUSTED_ORIGINS = [
+	"https://*",
+	"https://digitaldhobi.rachitkhurana.repl.co"
+]

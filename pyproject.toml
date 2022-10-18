@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "repl_nix_digitaldhobi"
+version = "0.1.0"
+description = ""
+authors = ["Replit user <<>>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.1.2"
+whitenoise = "^6.2.0"
+django-allauth = "^0.51.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

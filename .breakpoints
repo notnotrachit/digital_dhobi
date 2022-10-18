@@ -1,0 +1,12 @@
+{
+  "files": {
+    "venv/lib/python3.8/site-packages/django/contrib/auth/common_passwords.txt.gz.gz": [
+      {
+        "id": "3b160a32-6ca6-4407-8d38-11cee06d941d",
+        "line": 235,
+        "version": 1,
+        "index": 25874
+      }
+    ]
+  }
+}
