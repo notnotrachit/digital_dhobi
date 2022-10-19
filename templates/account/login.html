@@ -1,6 +1,6 @@
 {% extends "account/base.html" %} {% load i18n %} {% load account socialaccount
-%} {% block head_title %}{% trans "Sign In New" %}{% endblock %} {% block
-content %}
+%} {% block head_title %}{% trans "Sign In" %}{% endblock %} 
+{% block content %}
 
 <style>
   * {
@@ -16,30 +16,9 @@ content %}
   }
 </style>
 <center>
-  <h1>{% trans "Sign In New" %}</h1>
+  <h1>{% trans "Sign In" %}</h1>
 
-  {% get_providers as socialaccount_providers %} {% if socialaccount_providers
-  %}
-  <p>
-    {% blocktrans with site.name as site_name %}Please sign in with one of your
-    existing third party accounts.
-  </p>
 
-  <div class="socialaccount_ballot">
-    <ul class="socialaccount_providers">
-      {% include "socialaccount/snippets/provider_list.html" with
-      process="login" %}
-    </ul>
-
-    <div class="login-or">{% trans 'or' %}</div>
-  </div>
-
-  {% include "socialaccount/snippets/login_extra.html" %} {% else %}
-  <p>
-    {% blocktrans %}If you have not created an account yet, then please
-    <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}
-  </p>
-  {% endif %}
 
   <form class="login" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
