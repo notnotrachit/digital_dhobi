@@ -49,3 +49,10 @@ def completed(request, order_id):
     order.completed = True
     order.save()
     return redirect('orders')
+
+def home(request):
+	return render(request,'home.html')
+
+def home2(request):
+	return render(request,'home2.html')
+	

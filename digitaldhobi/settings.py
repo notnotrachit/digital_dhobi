@@ -136,7 +136,7 @@ STATICFILES_DIRS = [
 WHITENOISE_ROOT = "static"
 STATIC_URL = 'static/'
 
-
+LOGIN_REDIRECT_URL="home"
 
 LANGUAGE_CODE = 'en-us'
 
