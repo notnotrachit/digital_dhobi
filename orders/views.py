@@ -18,29 +18,28 @@ def order_submit(request):
     if request.method == 'POST':
         orders_no = orders.objects.count()
         id = orders_no + 1
-        date = request.POST.get('date')
-        name = request.POST.get('name')
-        enroll_no = request.POST.get('enroll_no')
-        room = request.POST.get('room')
-        kurta = request.POST.get('kurta')
-        pyjama = request.POST.get('pyjama')
-        shirt = request.POST.get('shirt')
-        tshirt = request.POST.get('tshirt')
-        pant = request.POST.get('pant')
-        lower = request.POST.get('lower')
-        shorts = request.POST.get('shorts')
-        bedsheet = request.POST.get('bedsheet')
-        pillowcover = request.POST.get('pillowcover')
-        towel = request.POST.get('towel')
-        dupatta = request.POST.get('dupatta')
-        total_clothes = request.POST.get('total_clothes')
+        name = request.POST['name']
+        enroll_no = request.POST['enroll_no']
+        room = request.POST['room']
+        kurta = request.POST['kurta']
+        pyjama = request.POST['pyjama']
+        shirt = request.POST['shirt']
+        tshirt = request.POST['tshirt']
+        pant = request.POST['pant']
+        lower = request.POST['lower']
+        shorts = request.POST['shorts']
+        bedsheet = request.POST['bedsheet']
+        pillowcover = request.POST['pillowcover']
+        towel = request.POST['towel']
+        dupatta = request.POST['dupatta']
+        total_clothes = request.POST['total_clothes']
         
-        order = orders(id=id, date=date, name=name, enroll_no=enroll_no, room=room, kurta=kurta, pyjama=pyjama, shirt=shirt, tshirt=tshirt, pant=pant, lower=lower, shorts=shorts, bedsheet=bedsheet, pillowcover=pillowcover, towel=towel, dupatta=dupatta, total_clothes=total_clothes)
+        order = orders(id=id, name=name, enroll_no=enroll_no, room=room, kurta=kurta, pyjama=pyjama, shirt=shirt, tshirt=tshirt, pant=pant, lower=lower, shorts=shorts, bedsheet=bedsheet, pillowcover=pillowcover, towel=towel, dupatta=dupatta, total_clothes=total_clothes)
         order.save()
         send_mail('Your dhobi order',
         'Your order has been submitted',
                   'order@digitaldhobi.com',
-                  f"{enroll_no}@bennett.edu.in",
+                  [f"{enroll_no}@bennett.edu.in"],
                   fail_silently=True)
         return redirect('order_detail', order_id=order.id)
 
