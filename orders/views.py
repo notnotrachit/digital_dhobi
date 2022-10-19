@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from orders.models import orders
-
+from django.core.mail import send_mail
 # Create your views here.
 
 def order(request):
@@ -34,5 +34,10 @@ def new_order(request):
         
         order = order(id=id, date=date, name=name, enroll_no=enroll_no, room=room, kurta=kurta, pyjama=pyjama, shirt=shirt, tshirt=tshirt, pant=pant, lower=lower, shorts=shorts, bedsheet=bedsheet, pillowcover=pillowcover, towel=towel, dupatta=dupatta, total_clothes=total_clothes)
         order.save()
-        return redirect('order_overview')
+        send_mail('Your dhobi order',
+        'Your order has been submitted',
+                  'order@digitaldhobi.com',
+                  f"{enroll_no}@bennett.edu.in",
+                  fail_silently=True)
+        return redirect('order_detail', order_id=order.id)
 
