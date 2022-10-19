@@ -12,6 +12,9 @@ def order_detail(request, order_id):
     return render(request, 'order_detail.html', {'order':order})
 
 def new_order(request):
+	return render(request,'form.html')
+
+def order_submit(request):
     if request.method == 'POST':
         orders_no = orders.objects.count()
         id = orders_no + 1
@@ -41,3 +44,8 @@ def new_order(request):
                   fail_silently=True)
         return redirect('order_detail', order_id=order.id)
 
+def completed(request, order_id):
+    order = orders.objects.get(id=order_id)
+    order.completed = True
+    order.save()
+    return redirect('orders')

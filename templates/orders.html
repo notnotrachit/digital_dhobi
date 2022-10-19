@@ -55,11 +55,11 @@
       </tr>
       {% for i in orders %}
       <tr>
-        <td>{{i.id}}</td>
-        <td>{{i.enroll_no}}</td>
-        <td>{{i.name}}</td>
-        <td>{{i.date}}</td>
-        <td>{{i.total_clothes}}</td>
+        <td><a href="/order_detail/{{i.id}}/">{{i.id}}</a></td>
+        <td><a href="/order_detail/{{i.id}}/">{{i.enroll_no}}</a></td>
+        <td><a href="/order_detail/{{i.id}}/">{{i.name}}</a></td>
+        <td><a href="/order_detail/{{i.id}}/">{{i.date}}</a></td>
+        <td><a href="/order_detail/{{i.id}}/">{{i.total_clothes}}</a></td>
       </tr>
       {% endfor %}
     </table>
