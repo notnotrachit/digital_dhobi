@@ -12,6 +12,9 @@ def order_detail(request, order_id):
     return render(request, 'order_detail.html', {'order':order})
 
 def new_order(request):
+	return render(request,'form.html')
+
+def order_submit(request):
     if request.method == 'POST':
         orders_no = orders.objects.count()
         id = orders_no + 1
