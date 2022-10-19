@@ -5,37 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Dhobi</title>
-<style>
-div1{
-    display: flex;
-    flex-direction: column;
-
-    width: 100rem;
-    height: fit-content;
-}
-div2{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-</style>
 </head>
 <body>
-    <div>
-        <div><h1 style="text-align:center;">Digital Dhobi</h1></div>
-
-        <div class="div1">
-            <div class="div2">
-                <a href="/orders"><button>Order Overview</button></a>
-           
-            
-             <a href="/new_order"><button>New Order</button></a>
-            </div>
-             
-            
-        </div>
-    </div>
+<style>
+body{
+        background-color: #acc8e5;
+        color: #112a46;
+}
+button{
+       background-color: #5190d3;
+       border: none;
+       padding: 10px;
+       border-radius: 20px;
+       box-shadow:7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+       cursor:pointer;
+}
+button :active{
+    transform: scale(0.1);
+}
+</style>
+<h1 style="text-align: center">Digital Dhobi</h1>
+      <center>
+        <a href="/orders"><button>Order Overview</button></a>
+        <a href="/new_order"><button>New Order</button>
+    </center>
 </body>
 </html>
