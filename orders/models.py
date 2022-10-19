@@ -19,4 +19,5 @@ class orders(models.Model):
     towel = models.IntegerField()
     dupatta = models.IntegerField()
     total_clothes = models.IntegerField()
+    completed = models.BooleanField()
 
