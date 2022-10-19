@@ -44,3 +44,8 @@ def order_submit(request):
                   fail_silently=True)
         return redirect('order_detail', order_id=order.id)
 
+def completed(request, order_id):
+    order = orders.objects.get(id=order_id)
+    order.completed = True
+    order.save()
+    return redirect('orders')
