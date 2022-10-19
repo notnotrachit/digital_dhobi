@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="order_detail.css" />
   </head>
   <body>
+    <style>
+      * {
+        background-color: #acc8e5;
+        color: #112a46;
+      }
+      .bld {
+        font-weight: bold;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        background-color: #5190d3;
+        border-radius: 10px;
+        box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+        cursor: pointer;
+        outline: none;
+        transition: 0.9s all;
+      }
+      button:active {
+        transform: scale(0.1);
+      }
+    </style>
     <center>
       <h1>Order Details</h1>
       <p><span class="bld">Order ID</span> : {{order.id}}</p>
@@ -27,7 +49,9 @@
       <p><span class="bld">Pillow Cover</span>: {{order.pillowcover}}</p>
       <p><span class="bld">Towel</span>: {{order.towel}}</p>
       <p><span class="bld">Dupatta</span>: {{order.dupatta}}</p>
-      <a href="/completed/{{order.id}}/"><button class="btn">Complete</button></a>
+      <a href="/completed/{{order.id}}/"
+        ><button class="btn">Complete</button></a
+      >
     </center>
   </body>
 </html>
