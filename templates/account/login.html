@@ -1,6 +1,5 @@
 {% extends "account/base.html" %} {% load i18n %} {% load account socialaccount
-%} {% block head_title %}{% trans "Sign In" %}{% endblock %} 
-{% block content %}
+%} {% block head_title %}{% trans "Sign In" %}{% endblock %} {% block content %}
 
 <style>
   * {
@@ -15,18 +14,12 @@
     cursor: pointer;
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   }
-  button :active {
-    transform: scale(0.1);
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  }
   input {
     padding: 5px;
   }
 </style>
 <center>
   <h1>{% trans "Sign In" %}</h1>
-
-
 
   <form class="login" method="POST" action="{% url 'account_login' %}">
     {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
