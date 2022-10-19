@@ -5,3 +5,16 @@
 .bld {
   font-weight: bold;
 }
+button {
+  padding: 10px;
+  border: none;
+  background-color: #5190d3;
+  border-radius: 10px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.9s all;
+}
+button:active {
+  transform: scale(0.1);
+}
