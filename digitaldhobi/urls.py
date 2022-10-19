@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),	
     path('orders/', orders, name='orders'),
-    path('order_detail/<int:pk>/', order_detail, name='order_detail'),
+    path('order_detail/<int:order_id>/', order_detail, name='order_detail'),
     path('new_order/', new_order, name='new_order'),
 ]
