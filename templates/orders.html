@@ -13,7 +13,16 @@
     />
     <title>Digital Dhobi</title>
     <style>
-      *,a {
+      body {
+        background-color: #acc8e5;
+        color: #112a46;
+      }
+      *,
+      a {
+        background-color: #acc8e5;
+        color: #112a46;
+      }
+      tr {
         background-color: #acc8e5;
         color: #112a46;
       }
@@ -31,14 +40,16 @@
       table {
         margin-left: auto;
         margin-right: auto;
-      
-	button, #but {
-	    padding: 10px;
-	    border: none;
-	    background-color: #5190d3;
-	    border-radius: 10px;
-	    cursor: pointer;
-	  }
+        background-color: #acc8e5;
+        color: #112a46;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        background-color: #5190d3;
+        border-radius: 10px;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body bgcolor="#acc8e5">
@@ -47,8 +58,6 @@
       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
       crossorigin="anonymous"
     ></script>
-
-    <div></div>
     <div>
       <h1 style="text-align: center; font-weight: bold">Order Overview</h1>
     </div>
@@ -60,25 +69,21 @@
         <th>Date</th>
         <th>Total no. of clothes</th>
       </tr>
-      
-      {% for i in orders %}<tr>
+      {% for i in orders %}
+      <tr>
         <td><a href="/order_detail/{{i.id}}/">{{i.id}}</a></td>
         <td><a href="/order_detail/{{i.id}}/">{{i.enroll_no}}</a></td>
         <td><a href="/order_detail/{{i.id}}/">{{i.name}}</a></td>
         <td><a href="/order_detail/{{i.id}}/">{{i.date}}</a></td>
         <td><a href="/order_detail/{{i.id}}/">{{i.total_clothes}}</a></td>
-      </tr>{% endfor %}
-      
-    </table><center>
-	  <a href="/orders">
-	  <button id="but">
-		  Pending Orders
-	  </button></a>
-	  <a href="/completed_order"
-	  <button id="but">
-		  Completed Orders
-	  </button>
-	  </a>
-	</center>
+      </tr>
+      {% endfor %}
+    </table>
+    <center>
+      <a href="/orders"> <button id="but">Pending Orders</button></a>
+      <a href="/completed_order">
+        <button id="but">Completed Orders</button>
+      </a>
+    </center>
   </body>
 </html>
