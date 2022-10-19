@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from orders.views import orders, order_detail, new_order
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),	
+    path('orders/', orders, name='orders'),
+    path('order_detail/<int:pk>/', order_detail, name='order_detail'),
+    path('new_order/', new_order, name='new_order'),
 ]

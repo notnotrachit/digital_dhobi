@@ -1,19 +1,20 @@
 from django.shortcuts import render, redirect
-from orders.models import Order
-
+from orders.models import orders
+from django.core.mail import send_mail
 # Create your views here.
 
 def order(request):
-    orders=Order.objects.all()
-    return render(request, 'order.html', {'orders':orders})
+    orders_all=orders.objects.all()
+    return render(request, 'order.html', {'orders':orders_all})
 
 def order_detail(request, order_id):
-    order=Order.objects.get(id=order_id)
+    order=orders.objects.get(id=order_id)
     return render(request, 'order_detail.html', {'order':order})
 
 def new_order(request):
     if request.method == 'POST':
-        id = request.POST.get('id')
+        orders_no = orders.objects.count()
+        id = orders_no + 1
         date = request.POST.get('date')
         name = request.POST.get('name')
         enroll_no = request.POST.get('enroll_no')
@@ -31,7 +32,12 @@ def new_order(request):
         dupatta = request.POST.get('dupatta')
         total_clothes = request.POST.get('total_clothes')
         
-        order = Order(id=id, date=date, name=name, enroll_no=enroll_no, room=room, kurta=kurta, pyjama=pyjama, shirt=shirt, tshirt=tshirt, pant=pant, lower=lower, shorts=shorts, bedsheet=bedsheet, pillowcover=pillowcover, towel=towel, dupatta=dupatta, total_clothes=total_clothes)
+        order = order(id=id, date=date, name=name, enroll_no=enroll_no, room=room, kurta=kurta, pyjama=pyjama, shirt=shirt, tshirt=tshirt, pant=pant, lower=lower, shorts=shorts, bedsheet=bedsheet, pillowcover=pillowcover, towel=towel, dupatta=dupatta, total_clothes=total_clothes)
         order.save()
-        return redirect('order_overview')
+        send_mail('Your dhobi order',
+        'Your order has been submitted',
+                  'order@digitaldhobi.com',
+                  f"{enroll_no}@bennett.edu.in",
+                  fail_silently=True)
+        return redirect('order_detail', order_id=order.id)
 
