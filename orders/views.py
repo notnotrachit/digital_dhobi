@@ -5,7 +5,7 @@ from django.core.mail import send_mail
 
 def order(request):
     orders_all=orders.objects.all()
-    return render(request, 'order.html', {'orders':orders_all})
+    return render(request, 'orders.html', {'orders':orders_all})
 
 def order_detail(request, order_id):
     order=orders.objects.get(id=order_id)
