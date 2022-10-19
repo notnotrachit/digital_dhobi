@@ -91,29 +91,102 @@
         background-color: wheat;
         width: 150px;
       }
+	* {
+	  margin: 0%;
+	  padding: 0%;
+	  background-color: #acc8e5;
+	  color: #112a46;
+	}
+	body {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  text-align: center;
+	}
+	header {
+	  margin-top: 10px;
+	  width: 100%;
+	  top: 0%;
+	  left: 0%;
+	  right: 0%;
+	  gap: 10px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  border-bottom: 1px solid black;
+	  padding-bottom: 5px;
+	}
+	.icon {
+	  width: 30px;
+	  height: 30px;
+	}
+	.container {
+	  width: 100%;
+	  align-items: center;
+	  justify-content: center;
+	  border-top: 1px solid black;
+	}
+	.table {
+	  margin-top: 1000px;
+	  display: grid;
+	  grid-template-columns: 50px 80px 80px;
+	  gap: 10px;
+	  align-items: center;
+	  justify-content: center;
+	  margin-top: 10px;
+	  margin-bottom: 10px;
+	}
+	input {
+	  border: 1px black solid;
+	  width: 40px;
+	  height: 30px;
+	  padding: 4px;
+	  border-radius: 10px;
+	  margin-left: 15px;
+	}
+	footer {
+	  width: 100%;
+	  bottom: 0%;
+	  left: 0%;
+	  right: 0%;
+	  margin-bottom: 10px;
+	  padding-top: 10px;
+	  border-top: solid 1px black;
+	}
+	button {
+	  padding: 10px;
+	  border: none;
+	  border-radius: 10px;
+	  font-weight: 900;
+	  background-color: rgb(56, 222, 14);
+	  border: 1px solid rgb(56, 222, 14);
+	  color: #112a46;
+	}
+
     </style>
     <div class="container">
       <header>
         <p>New Order</p>
       </header>
-      <form>
+      <form action='/order_submit' method="post">
+		  {% csrf_token %}
         <div class="divh">
           <div class="tbl">
             <p>Room no.</p>
-            <input type="number" style="width: 70px" />
+            <input type="number" style="width: 70px" id="room"/>
           </div>
           <div class="tbl">
             <p>Enroll. no.</p>
-            <input type="text" />
+            <input type="text" id="enroll_no"/>
           </div>
           <div class="tbl">
             <p>Name</p>
-            <input type="text" />
+            <input type="text" id="name"/>
           </div>
         </div>
         <div class="table">
           <tr class="table-active">
-            <img class="icon" src="clothes/kurta.png" alt="Kurta image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/kurta.png" alt="Kurta image" />
             <p>Kurta</p>
             <input
               type="number"
@@ -124,7 +197,7 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/pajama.png" alt="pajama image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/pajama.png" alt="pajama image" />
             <p>Pajama</p>
             <input
               type="number"
@@ -135,7 +208,7 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/shirt.png" alt="shirt image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/shirt.png" alt="shirt image" />
             <p>Shirt</p>
             <input
               type="number"
@@ -147,7 +220,7 @@
           </tr>
 
           <tr class="table-active">
-            <img class="icon" src="clothes/T-shirt.png" alt="t-shirt image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/T-shirt.png" alt="t-shirt image" />
             <p>T-Shirt</p>
             <input
               type="number"
@@ -158,7 +231,7 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/pants.png" alt="pant image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/pants.png" alt="pant image" />
             <p>Pant</p>
             <input
               type="number"
@@ -169,7 +242,7 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/pajamas.png" alt="lower image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/pajamas.png" alt="lower image" />
             <p>Lower</p>
             <input
               type="number"
@@ -180,7 +253,7 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/shorts.png" alt="shorts image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/shorts.png" alt="shorts image" />
             <p>Shorts</p>
             <input
               type="number"
@@ -191,7 +264,7 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/bedsheet.png" alt="bedsheet image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/bedsheet.png" alt="bedsheet image" />
             <p>Bedsheet</p>
             <input
               type="number"
@@ -204,7 +277,7 @@
           <tr class="table-active">
             <img
               class="icon"
-              src="clothes/pillowcover.png"
+              src="https://digitaldhobi.rachitkhurana.repl.co/clothes/pillowcover.png"
               alt="pillow cover image"
               id="pillowcover"
             />
@@ -218,18 +291,23 @@
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/scarf.png" alt="dupataa image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/scarf.png" alt="dupataa image" />
             <p>Dupatta</p>
             <input
               type="number"
               min="0"
               max="10"
+<<<<<<< HEAD:static/index.html
               style="background-color: white; width: 60px"
               id="scarf"
+=======
+              style="background-color: white"
+              id="Dupatta"
+>>>>>>> fee6097aa853f556c02ea7df1df90b3474387b7e:templates/form.html
             />
           </tr>
           <tr class="table-active">
-            <img class="icon" src="clothes/towel.png" alt="towel image" />
+            <img class="icon" src="https://digitaldhobi.rachitkhurana.repl.co/clothes/towel.png" alt="towel image" />
             <p>Towel</p>
             <input
               type="number"
