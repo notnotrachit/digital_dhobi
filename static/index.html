@@ -14,24 +14,104 @@
     <title>Digital Dhobi</title>
   </head>
   <body>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        background-color: #acc8e5;
+        color: #112a46;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      header {
+        width: 100%;
+        top: 0%;
+        left: 0%;
+        right: 0%;
+        border-bottom: 1px solid black;
+      }
+      .icon {
+        width: 30px;
+        height: 30px;
+      }
+      .container {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        border-top: 1px solid black;
+      }
+      .table {
+        margin-top: 1000px;
+        display: grid;
+        grid-template-columns: 50px 80px 80px;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      input {
+        border: 1px black solid;
+        width: 40px;
+        height: 30px;
+        padding: 4px;
+        border-radius: 10px;
+        margin-left: 15px;
+      }
+      footer {
+        width: 100%;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        margin-bottom: 10px;
+        padding-top: 10px;
+        border-top: solid 1px black;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-weight: 900;
+        background-color: rgb(56, 222, 14);
+        border: 1px solid rgb(56, 222, 14);
+        color: #112a46;
+      }
+      header {
+        font-size: 30px;
+      }
+      .tbl {
+        align-items: center;
+        justify-content: center;
+      }
+      .tbl input {
+        background-color: wheat;
+        width: 150px;
+      }
+    </style>
     <div class="container">
       <header>
-      <p>New Order</p>
+        <p>New Order</p>
       </header>
-      <div class="table">
-        <tbody>
-          <tr class="table-active">
+      <form>
+        <div class="divh">
+          <div class="tbl">
             <p>Room no.</p>
-            <input type="number" >
-          </tr>
-          <tr class="table-active">
+            <input type="number" style="width: 70px" />
+          </div>
+          <div class="tbl">
             <p>Enroll. no.</p>
-            <input type="text">
-          </tr>
-          <tr class="table-active">
+            <input type="text" />
+          </div>
+          <div class="tbl">
             <p>Name</p>
-            <input type="text">
-          </tr>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="table">
           <tr class="table-active">
             <img class="icon" src="clothes/kurta.png" alt="Kurta image" />
             <p>Kurta</p>
@@ -159,22 +239,20 @@
               id="towel"
             />
           </tr>
-        </tbody>
-      </div>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 10px;
-        "
-      >
-        <div>
-          <button type="submit">Submit</button>
-          <h3>Total</h3>
-          <h2>---</h2>
         </div>
-      </div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+          "
+        >
+          <div>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
       <footer>&#169; Digital Dhobi</footer>
     </div>
     <link
