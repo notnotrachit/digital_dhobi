@@ -5,8 +5,13 @@ from django.core.mail import send_mail
 
 
 def order(request):
-	orders_all = orders.objects.all()
+	orders_all = orders.objects.exclude(completed=True)
 	return render(request, 'orders.html', {'orders': orders_all})
+
+def completed_order(request):
+	orders_all = orders.objects.exclude(completed=False)
+	return render(request, 'orders.html', {'orders': orders_all})
+
 
 
 def order_detail(request, order_id):
