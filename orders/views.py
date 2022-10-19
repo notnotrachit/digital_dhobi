@@ -1,28 +1,30 @@
 from django.shortcuts import render, redirect
 from orders.models import orders
 from django.core.mail import send_mail
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required
 def order(request):
 	orders_all = orders.objects.exclude(completed=True)
 	return render(request, 'orders.html', {'orders': orders_all})
 
+@login_required
 def completed_order(request):
 	orders_all = orders.objects.exclude(completed=False)
 	return render(request, 'orders.html', {'orders': orders_all})
 
 
-
+@login_required
 def order_detail(request, order_id):
 	order = orders.objects.get(id=order_id)
 	return render(request, 'order_detail.html', {'order': order})
 
-
+@login_required
 def new_order(request):
 	return render(request, 'form.html')
 
-
+@login_required
 def order_submit(request):
 	if request.method == 'POST':
 		print(request.POST)
@@ -67,7 +69,7 @@ def order_submit(request):
 		          fail_silently=True)
 		return redirect('order_detail', order_id=order.id)
 
-
+@login_required
 def completed(request, order_id):
 	order = orders.objects.get(id=order_id)
 	order.completed = True
@@ -78,6 +80,6 @@ def completed(request, order_id):
 def home(request):
 	return render(request, 'home.html')
 
-
+@login_required
 def home2(request):
 	return render(request, 'home2.html')
