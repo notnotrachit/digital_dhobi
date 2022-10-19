@@ -53,14 +53,17 @@
         <th>Total no. of clothes</th>
         <th>Complete Order</th>
       </tr>
+		{% for i in  orders %}
       <tr>
-        <td>1</td>
-        <td>E22BCCS0121</td>
-        <td>NAME</td>
-        <td>Date</td>
-        <td>3</td>
+        <td>{{i.id}}</td>
+        <td>{{i.enroll_no}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.date}}</td>
+        <td>{{i.total_clothes}}</td>
         <td><button type="submit">Completed</button></td>
       </tr>
+		{% endfor %}
+
 
     </table>
   </body>
