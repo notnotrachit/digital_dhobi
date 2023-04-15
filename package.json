@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/rachit1601/digital_dhobi#readme",
   "dependencies": {
-    "@popperjs/core": "^2.11.6",
+    "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.2"
   }
 }
